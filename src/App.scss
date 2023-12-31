@@ -1,0 +1,325 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+:root::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a7bcff;
+  height: 100vh;
+
+  .wraper {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 60px;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      columns: #5b5b8d;
+    }
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      input {
+        width: 250px;
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid #a7bcff;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        cursor: pointer;
+      }
+      button {
+        background-color: #5b5b8d;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a7bcff;
+  height: 100vh;
+
+  .container {
+    border: 1px solid white;
+    width: 65%;
+    height: 80%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .sidebar {
+    flex: 1;
+    background-color: #3a3a58;
+    height: 100%;
+    .chats {
+      overflow-y: scroll;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      height: 50px;
+      background-color: #2f2d52;
+      color: white;
+    }
+    .logo {
+      font-weight: bold;
+    }
+    .user {
+      display: flex;
+      gap: 10px;
+      span {
+        line-height: 38px;
+        width: 50px;
+      }
+      img {
+        // height: 24px;
+        // width: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      button {
+        border: none;
+        background-color: #a7bcff;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 7px 4px;
+        font-size: 10px;
+      }
+    }
+    .search {
+      border-bottom: 1px solid gray;
+      .searchForm {
+        padding: 10px;
+        input {
+          background-color: transparent;
+          outline: none;
+          border: none;
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+    }
+    .userChat {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      cursor: pointer;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      &:hover {
+        background-color: #2f2d52;
+      }
+      span {
+        font-size: 18px;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+        padding: 3px;
+      }
+    }
+  }
+  .chat {
+    flex: 2;
+    height: 100%;
+  }
+}
+.chat {
+  background-color: rgb(230, 216, 216);
+  .blankChat {
+    background-color: #5b5b8d;
+    height: 100%;
+    .logodiv {
+      height: calc(100% - 80px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        padding: 20px;
+      }
+      span {
+        font-size: 18px;
+        color: white;
+      }
+    }
+    .secureMessage {
+      padding: 10px;
+      height: 50px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12px;
+      span {
+      }
+    }
+  }
+  .message {
+    display: flex;
+    gap: 20px;
+    .messageInfo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: grey;
+      font-weight: 300;
+      font-size: 14px;
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .messageContent {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      img {
+        border-radius: 10px;
+      }
+      p {
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 0px 10px 10px 10px;
+      }
+    }
+    &.owner {
+      flex-direction: row-reverse;
+      .messageContent {
+        align-items: flex-end;
+        img {
+          border-radius: 10px;
+        }
+        p {
+          background-color: #5b5b8d;
+          color: white;
+          max-width: max-content;
+
+          border-radius: 10px 0px 10px 10px;
+        }
+      }
+    }
+  }
+
+  .userdetails {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .chatInfo {
+    display: flex;
+    background-color: #5b5b8d;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    .chatIcon {
+      display: flex;
+      gap: 10px;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+  .input {
+    background-color: white;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .send {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-right: 10px;
+      img {
+        cursor: pointer;
+      }
+      button {
+        border: none;
+        color: #2f2d52;
+        background-color: #a7bcff;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    }
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      color: #2f2d52;
+      font-size: 18px;
+      &::placeholder {
+        color: rgb(83, 78, 78);
+      }
+    }
+  }
+  .mess {
+    height: calc(100% - 160px);
+    padding: 10px;
+    overflow-y: scroll;
+  }
+}
